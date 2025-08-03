@@ -140,7 +140,7 @@ const openEditRelationModal = (id: string, relation: RelationalRelationField) =>
   align-items: center;
   background-color: var(--color-primary);
   width: 100%;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid var(--color-border);
   box-sizing: border-box;
 }
 
@@ -158,7 +158,7 @@ const openEditRelationModal = (id: string, relation: RelationalRelationField) =>
 .header-divider {
   width: 2px;
   height: 100%;
-  background-color: black;
+  background-color: var(--color-border);
 }
 
 .vue-flow-viewport {
@@ -173,8 +173,8 @@ const openEditRelationModal = (id: string, relation: RelationalRelationField) =>
   top: 10px;
   right: 10px;
   background-color: var(--color-primary);
-  color: black;
-  border: 2px solid black;
+  color: var(--color-text-default);
+  border: 2px solid var(--color-border);
   padding: 3px 6px;
   font-weight: bold;
   border-radius: 8px;
@@ -203,8 +203,8 @@ const openEditRelationModal = (id: string, relation: RelationalRelationField) =>
   width: 40px;
   height: 40px;
   background-color: var(--color-primary);
-  border: 2px solid black;
-  color: black;
+  border: 2px solid var(--color-border);
+  color: var(--color-text-default);
   border-radius: 50%;
   font-size: 20px;
   display: flex;
@@ -229,7 +229,7 @@ const openEditRelationModal = (id: string, relation: RelationalRelationField) =>
   display: flex;
   align-items: center;
   background: var(--color-primary);
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   border-radius: 50px;
   height: 40px;
   padding: 0 10px;
@@ -248,6 +248,7 @@ const openEditRelationModal = (id: string, relation: RelationalRelationField) =>
   cursor: pointer;
   background: none;
   border: none;
+  color: var(--color-text-default);
 }
 
 .collapse-btn svg {
@@ -271,13 +272,15 @@ const openEditRelationModal = (id: string, relation: RelationalRelationField) =>
   caret-color: transparent;
   border: 2px solid var(--color-border);
   border-radius: 4px;
-  background-color: #f4f4f0;
+  background-color: var(--color-bg-default);
   padding: 0.25rem;
   height: 32px;
   font-weight: bold;
+  color: var(--color-text-default)
 }
 
 .create-model-btn:hover {
-  background-color: var(--color-success);
+  background-color: var(--color-bg-accent);
+  color: var(--color-text-hover)
 }
 </style>

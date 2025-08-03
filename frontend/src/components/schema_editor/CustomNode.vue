@@ -94,7 +94,7 @@ const closeNodeActions = () => {
 
 .custom-node-title {
   font-weight: bold;
-  background-color: #ffdb58;
+  background-color: var(--color-bg-accent);
   color: black;
   width: 100%;
   height: 100%;
@@ -193,7 +193,7 @@ const closeNodeActions = () => {
 }
 
 .ellipsis-wrapper {
- color: var(--color-bg-default);
+ color: var(--color-text-default);
 }
 
 </style>

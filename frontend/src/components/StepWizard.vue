@@ -85,11 +85,11 @@ const goToStep = (index) => {
 }
 
 .step.active {
-  background-color: var(--color-primary);
+  background-color: var(--color-bg-accent);
 }
 
 .step.completed {
-  background-color: #7fbc8c;
+  background-color: var(--color-bg-success);
 }
 
 .step-content {

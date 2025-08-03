@@ -5,8 +5,9 @@
   --color-text-hover: white;
   --color-shadow: rgba(0,0,0,0.5);
   --color-border: black;
-  --color-bg-accent: #ffdb58;
+  --color-bg-accent: #5294fd;
   --color-text-accent: black;
+  --color-bg-success: #52fdf5;
 }
 
 .dark {
@@ -16,8 +17,9 @@
   --color-text-hover: black;
   --color-shadow: rgba(255,255,255,0.5);
   --color-border: white;
-  --color-bg-accent: #ffdb58;
+  --color-bg-accent: #5294fd;
   --color-text-accent: black;
+  --color-bg-success: #52fdf5;
 }
 
 body {
