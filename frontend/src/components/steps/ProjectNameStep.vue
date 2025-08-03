@@ -11,19 +11,19 @@
         <input
           class="project-name"
           :class="{
-            confirmed: store.isProjectNameConfirmed,
+            confirmed: projectStore.isProjectNameConfirmed,
             'input-error': showError,
           }"
           type="text"
           placeholder="Enter your project name"
           :value="localProjectName"
           @input="handleInputChange($event)"
-          :disabled="store.isProjectNameConfirmed"
+          :disabled="projectStore.isProjectNameConfirmed"
           maxlength="50"
         />
         <button
           class="confirm-btn"
-          :class="{ confirmed: store.isProjectNameConfirmed }"
+          :class="{ confirmed: projectStore.isProjectNameConfirmed }"
           @click="handleConfirm"
           :disabled="showError || !localProjectName"
         >
@@ -39,9 +39,9 @@
 
 <script setup>
 import { ref, onMounted } from "vue"
-import { useProjectStore } from "@/stores/store"
+import { useProjectStore } from "@/stores/useProjectStore"
 
-const store = useProjectStore()
+const projectStore = useProjectStore()
 const localProjectName = ref("")
 const showError = ref(false)
 const errorMessage = ref("")
@@ -68,21 +68,21 @@ const handleInputChange = (event) => {
 }
 
 const handleConfirm = () => {
-  if (store.isProjectNameConfirmed) {
-    store.isProjectNameConfirmed = false
-    store.setProjectName("")
+  if (projectStore.isProjectNameConfirmed) {
+    projectStore.isProjectNameConfirmed = false
+    projectStore.setProjectName("")
     return
   }
 
   if (!localProjectName.value || showError.value) return
 
-  store.setProjectName(localProjectName.value)
-  store.isProjectNameConfirmed = true
+  projectStore.setProjectName(localProjectName.value)
+  projectStore.isProjectNameConfirmed = true
 }
 
 onMounted(() => {
-  if (store.getProjectName()) {
-    localProjectName.value = store.getProjectName()
+  if (projectStore.getProjectName()) {
+    localProjectName.value = projectStore.getProjectName()
   }
 })
 </script>
@@ -129,7 +129,7 @@ onMounted(() => {
   caret-color: transparent;
   border: 2px solid var(--color-border);
   border-radius: 4px;
-  background-color: #f4f4f0;
+  background-color: var(--color-background);
   padding: 0.25rem;
   box-shadow: 3px 3px 0px var(--color-shadow);
   transition:
@@ -144,14 +144,14 @@ onMounted(() => {
   box-shadow: 0px 0px 0px var(--color-shadow);
   cursor: pointer;
   transition: 0.1s;
-  background-color: #2fff2f;
+  background-color: var(--color-success);
 }
 .confirm-btn.confirmed {
   transition: 0.1s;
-  background-color: #2fff2f;
+  background-color: var(--color-success);
 }
 .confirm-btn.confirmed:hover {
-  background-color: #f4f4f0;
+  background-color: var(--color-background);
   transform: translate(0px, 0px);
   box-shadow: 3px 3px 0px var(--color-shadow);
 }
@@ -175,7 +175,7 @@ onMounted(() => {
 .confirm-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
-  background-color: #f4f4f0;
+  background-color: var(--color-background);
 }
 .container {
   display: flex;

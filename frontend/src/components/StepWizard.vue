@@ -14,9 +14,7 @@
     </div>
 
     <div class="step-actions">
-      <button v-if="currentStep > 0" @click="currentStep--" class="btn prev-btn">
-        Previous
-      </button>
+      <button v-if="currentStep > 0" @click="currentStep--" class="btn prev-btn">Previous</button>
       <button v-if="currentStep < steps.length - 1" @click="nextStep" class="btn next-btn">
         Next
       </button>
@@ -87,7 +85,7 @@ const goToStep = (index) => {
 }
 
 .step.active {
-  background-color: #ffdb58;
+  background-color: var(--color-primary);
 }
 
 .step.completed {

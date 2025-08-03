@@ -11,14 +11,14 @@
 
 <script setup lang="ts">
 import { ref } from "vue"
-import { useProjectStore } from "@/stores/store"
+import { useProjectStore } from "@/stores/useProjectStore"
 import { useModalStore } from "@/stores/useModalStore"
 
 const props = defineProps<{
   id: string
 }>()
 
-const store = useProjectStore()
+const projectStore = useProjectStore()
 const modalStore = useModalStore()
 
 const newNodeId = ref(props.id)
@@ -29,7 +29,7 @@ const rename = () => {
     return
   }
 
-  store.renameNode(props.id, newNodeId.value.trim())
+  projectStore.renameNode(props.id, newNodeId.value.trim())
   modalStore.close()
 }
 </script>
@@ -61,7 +61,7 @@ const rename = () => {
   border: 2px solid var(--color-border);
   border-radius: 4px;
   padding: 0.5rem;
-  background-color: #f4f4f0;
+  background-color: var(--color-background);
   box-shadow: 3px 3px 0 black;
   transition:
     transform 0.1s ease-in-out,
@@ -80,7 +80,7 @@ const rename = () => {
   border: 2px solid var(--color-border);
   border-radius: 4px;
   font-weight: bold;
-  background-color: #2fff2f;
+  background-color: var(--color-success);
   box-shadow: 3px 3px 0 black;
   transition:
     transform 0.1s ease-in-out,

@@ -38,7 +38,6 @@
         v-for="field in data.fields"
         :key="field.name"
         class="custom-node-field-row"
-        :class="{ 'primary-key': field.isPrimaryKey }"
         @click="$emit('open-edit-field-modal', props.id, field)"
       >
         <div class="custom-node-field-name">{{ field.name }}</div>
@@ -81,6 +80,7 @@ const closeNodeActions = () => {
   border-radius: 6px;
   width: 250px;
   overflow: hidden;
+  background-color: white;
 }
 
 .custom-node-header {
@@ -110,8 +110,8 @@ const closeNodeActions = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-left: 2px solid var(--color-border);
-  background-color: #ffdb58;
+  border-left: 2px solid black;
+  background-color: var(--color-bg-default);
 }
 
 .custom-node-body {

@@ -46,7 +46,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from "vue"
-import { useProjectStore } from "@/stores/store"
+import { useProjectStore } from "@/stores/useProjectStore"
 import { useModalStore } from "@/stores/useModalStore"
 import type { RelationalRelationField } from "@/types.types"
 
@@ -55,7 +55,7 @@ const props = defineProps<{
   relation: RelationalRelationField
 }>()
 
-const store = useProjectStore()
+const projectStore = useProjectStore()
 const modalStore = useModalStore()
 
 const originalFieldName = ref("")
@@ -78,12 +78,12 @@ onMounted(() => {
   indexed.value = props.relation.isIndex || false
 })
 
-const filteredNodes = computed(() => store.nodes.filter((node) => node.id !== props.id))
+const filteredNodes = computed(() => projectStore.nodes.filter((node) => node.id !== props.id))
 
 const saveChanges = () => {
   if (!selectedNodeId.value || !fieldName.value) return
 
-  store.updateRelation(props.id, props.relation.targetModel, props.relation.fieldName, {
+  projectStore.updateRelation(props.id, props.relation.targetModel, props.relation.fieldName, {
     fieldName: fieldName.value,
     targetModel: selectedNodeId.value,
     backPopulates: backPopulates.value,
@@ -97,7 +97,7 @@ const saveChanges = () => {
 }
 
 const deleteRelation = () => {
-  store.deleteRelation(props.id, props.relation.targetModel, props.relation.fieldName)
+  projectStore.deleteRelation(props.id, props.relation.targetModel, props.relation.fieldName)
   modalStore.close()
 }
 </script>
@@ -135,7 +135,7 @@ const deleteRelation = () => {
   border-radius: 4px;
   padding: 0.5rem;
   box-shadow: 3px 3px 0px black;
-  background-color: #f4f4f0;
+  background-color: var(--color-background);
   transition:
     transform 0.1s ease-in-out,
     box-shadow 0.1s ease-in-out;
@@ -161,7 +161,7 @@ const deleteRelation = () => {
   border: 2px solid var(--color-border);
   border-radius: 4px;
   font-weight: bold;
-  background-color: #2fff2f;
+  background-color: var(--color-success);
   box-shadow: 3px 3px 0px black;
   transition:
     transform 0.1s ease-in-out,
@@ -180,7 +180,7 @@ const deleteRelation = () => {
   border: 2px solid var(--color-border);
   border-radius: 4px;
   font-weight: bold;
-  background-color: #ff6b6b;
+  background-color: var(--color-danger);
   box-shadow: 3px 3px 0px black;
   transition:
     transform 0.1s ease-in-out,

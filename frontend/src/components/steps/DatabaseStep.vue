@@ -9,7 +9,7 @@
           v-for="db in databases"
           :key="db"
           :class="{
-            confirmed: store.getDatabase() === db,
+            confirmed: projectStore.getDatabase() === db,
             disabled: db !== 'PostgreSQL',
             enabled: db === 'PostgreSQL',
           }"
@@ -24,19 +24,19 @@
 
 <script setup lang="ts">
 import { onMounted } from "vue"
-import { useProjectStore } from "@/stores/store"
+import { useProjectStore } from "@/stores/useProjectStore"
 
-const store = useProjectStore()
+const projectStore = useProjectStore()
 const databases = ["PostgreSQL", "MySQL", "SQLite"]
 
 const handleDatabaseClick = (db) => {
   if (db !== "PostgreSQL") return
-  store.setDatabase(store.getDatabase() === db ? "" : db)
+  projectStore.setDatabase(projectStore.getDatabase() === db ? "" : db)
 }
 
 onMounted(() => {
-  if (store.getDatabase() && store.getDatabase() !== "PostgreSQL") {
-    store.setDatabase("")
+  if (projectStore.getDatabase() && projectStore.getDatabase() !== "PostgreSQL") {
+    projectStore.setDatabase("")
   }
 })
 </script>
@@ -86,7 +86,7 @@ onMounted(() => {
   transform: translate(2px, 2px);
   box-shadow: 0px 0px 0px var(--color-shadow);
   cursor: pointer;
-  background-color: #2fff2f;
+  background-color: var(--color-success);
 }
 
 .db-item.enabled.confirmed {
@@ -96,7 +96,7 @@ onMounted(() => {
 }
 
 .db-item.enabled.confirmed:hover {
-  background-color: #f4f4f0;
+  background-color: var(--color-background);
   transform: translate(0px, 0px);
   box-shadow: 3px 3px 0px var(--color-shadow);
 }
