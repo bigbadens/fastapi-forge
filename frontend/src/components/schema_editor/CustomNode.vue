@@ -5,7 +5,7 @@
         {{ id }}
       </div>
       <div
-        class="custom-node-actions nodrag"
+        class="custom-node-actions nodrag ellipsis-wrapper"
         @mouseover="openNodeActions"
         @mouseleave="closeNodeActions"
       >
@@ -77,7 +77,7 @@ const closeNodeActions = () => {
 
 <style scoped>
 .custom-node {
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   border-radius: 6px;
   width: 250px;
   overflow: hidden;
@@ -87,7 +87,7 @@ const closeNodeActions = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid var(--color-border);
   width: 100%;
   height: 32px;
 }
@@ -95,6 +95,7 @@ const closeNodeActions = () => {
 .custom-node-title {
   font-weight: bold;
   background-color: #ffdb58;
+  color: black;
   width: 100%;
   height: 100%;
   display: flex;
@@ -109,14 +110,14 @@ const closeNodeActions = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-left: 2px solid black;
+  border-left: 2px solid var(--color-border);
   background-color: #ffdb58;
 }
 
 .custom-node-body {
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: var(--color-bg-default);
   cursor: pointer;
 }
 
@@ -126,10 +127,11 @@ const closeNodeActions = () => {
   align-items: center;
   height: 28px;
   padding: 0 8px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--color-border);
 }
 .custom-node-field-row:hover {
-  background-color: #f8f8f8;
+  background-color: var(--color-bg-hover);
+  color: var(--color-text-hover);
 }
 
 .custom-node-field-row:last-child {
@@ -138,14 +140,16 @@ const closeNodeActions = () => {
 
 .custom-node-field-row.primary-key {
   background-color: #90ee90;
+  color: black;
 }
+
 .custom-node-field-row.primary-key:hover {
-  background-color: #f8f8f8;
+  background-color: var(--color-bg-hover);
+  color: var(--color-text-hover);
 }
 
 .custom-node-field-name {
   font-weight: 600;
-  color: #343a40;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -159,13 +163,14 @@ const closeNodeActions = () => {
 .dropdown-list {
   margin-left: 160px;
   caret-color: transparent;
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   position: absolute;
   width: 100%;
   min-width: 120px;
   max-width: 140px;
   border-radius: 5px;
-  background: white;
+  background: var(--color-bg-default);
+  color: var(--color-text-default);
   z-index: 100;
   padding: 4px;
   box-sizing: border-box;
@@ -186,4 +191,9 @@ const closeNodeActions = () => {
   border: 2px solid black;
   cursor: pointer;
 }
+
+.ellipsis-wrapper {
+ color: var(--color-bg-default);
+}
+
 </style>

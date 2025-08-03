@@ -91,12 +91,12 @@ const openEditRelationModal = (id: string, relation: RelationalRelationField) =>
 .vue-flow-container {
   width: 1000px;
   height: 500px;
-  background-color: #ffffff;
-  border: 2px solid black;
+  background-color: var(--color-bg-default);
+  border: 2px solid var(--color-border);
 }
 .vue-flow-header {
   height: 40px;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid var(--color-border);
   display: flex;
   align-items: center;
   background-color: #ffdb58;
@@ -118,7 +118,7 @@ const openEditRelationModal = (id: string, relation: RelationalRelationField) =>
   width: 100%;
   height: 12px;
   padding: 0.5rem;
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   border-radius: 4px;
   margin-left: 20px;
 }
@@ -128,7 +128,7 @@ const openEditRelationModal = (id: string, relation: RelationalRelationField) =>
 
 .create-model-btn {
   caret-color: transparent;
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   border-radius: 4px;
   background-color: #f4f4f0;
   padding: 0.25rem;

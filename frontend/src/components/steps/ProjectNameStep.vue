@@ -91,9 +91,9 @@ onMounted(() => {
 .project-name {
   width: 100%;
   padding: 0.5rem;
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   border-radius: 4px;
-  box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+  box-shadow: 3px 3px 0px var(--color-shadow);
   transition:
     transform 0.1s ease-in-out,
     box-shadow 0.1s ease-in-out;
@@ -103,7 +103,7 @@ onMounted(() => {
 .project-name.confirmed {
   outline: none;
   transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 0px var(--color-shadow);
 }
 .project-name.confirmed {
   cursor: not-allowed;
@@ -127,11 +127,11 @@ onMounted(() => {
 }
 .confirm-btn {
   caret-color: transparent;
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   border-radius: 4px;
   background-color: #f4f4f0;
   padding: 0.25rem;
-  box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+  box-shadow: 3px 3px 0px var(--color-shadow);
   transition:
     transform 0.1s ease-in-out,
     box-shadow 0.1s ease-in-out;
@@ -141,7 +141,7 @@ onMounted(() => {
 .confirm-btn:hover,
 .confirm-btn.confirmed {
   transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 0px var(--color-shadow);
   cursor: pointer;
   transition: 0.1s;
   background-color: #2fff2f;
@@ -153,7 +153,7 @@ onMounted(() => {
 .confirm-btn.confirmed:hover {
   background-color: #f4f4f0;
   transform: translate(0px, 0px);
-  box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+  box-shadow: 3px 3px 0px var(--color-shadow);
 }
 .label-group {
   display: flex;

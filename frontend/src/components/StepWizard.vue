@@ -75,14 +75,14 @@ const goToStep = (index) => {
   justify-content: center;
   margin: 0 5px;
   cursor: pointer;
-  border: 2px solid black;
-  box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+  border: 2px solid var(--color-border);
+  box-shadow: 2px 2px 0px var(--color-shadow);
   transition: transform 0.1s ease-out, box-shadow 0.1s;
 }
 
 .step:hover {
   background-color: darkgray;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 0px var(--color-shadow);
   transform: translate(2px, 2px);
 }
 
@@ -99,21 +99,12 @@ const goToStep = (index) => {
 }
 
 .step-actions {
-  display: grid;
-  grid-template-rows: 1;
-  grid-template-columns: 2;
-  justify-content: space-between;
-  width: 10%;
-  position: absolute;
-  bottom: 8rem;
-}
-
-.prev-btn {
-  grid-column: 1;
-}
-
-.next-btn {
-  grid-column: 2;
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
 }
 
 .next-btn,
@@ -121,10 +112,10 @@ const goToStep = (index) => {
 .finish-btn {
   caret-color: transparent;
   padding: 0.5rem 1rem;
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   border-radius: 4px;
   background-color: #f4f4f0;
-  box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+  box-shadow: 3px 3px 0px var(--color-shadow);
   transition: transform 0.1s ease-in-out, box-shadow 0.1s;
   font-weight: bold;
 }
@@ -133,7 +124,7 @@ const goToStep = (index) => {
 .prev-btn:hover,
 .finish-btn:hover {
   transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 0px var(--color-shadow);
   cursor: pointer;
 }
 </style>

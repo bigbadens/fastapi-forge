@@ -20,6 +20,7 @@
           </svg>
         </a>
       </div>
+      <DarkModeToggle />
     </header>
     <main class="main">
       <div class="content">
@@ -36,6 +37,7 @@ import ProjectNameStep from "./components/steps/ProjectNameStep.vue"
 import DatabaseStep from "./components/steps/DatabaseStep.vue"
 import SchemaStep from "./components/steps/SchemaStep.vue"
 import GlobalModal from "@/components/modal/GlobalModal.vue"
+import DarkModeToggle from "./darkmode/DarkModeToggle.vue"
 
 const steps: Array<any> = [SchemaStep, ProjectNameStep, DatabaseStep, SchemaStep]
 </script>
@@ -51,16 +53,13 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: #f4f4f0;
-  font-family: sans-serif;
 }
 
 .header {
   height: 60px;
   position: sticky;
   flex-shrink: 0;
-  background-color: #ffffff;
-  border-bottom: 4px solid black;
+  border-bottom: 4px solid var(--color-border);
   top: 0;
   display: flex;
   align-items: center;
@@ -81,24 +80,25 @@ body {
 .github-icon {
   width: 20px;
   height: 20px;
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   border-radius: 15%;
   padding: 0.25rem;
-  box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+  box-shadow: 2px 2px 0px var(--color-shadow);
   transition:
     transform 0.1s ease-in-out,
     box-shadow 0.1s ease-in-out;
+  color: var(--color-text-default);
 }
 
 .github-icon:hover {
   transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 0px var(--color-shadow);
   cursor: pointer;
 }
 
 .github-icon:visited,
 .github-icon:active,
 .github-icon:focus {
-  color: black;
+  color: var(--color-text-default);
 }
 </style>

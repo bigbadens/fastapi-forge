@@ -107,7 +107,7 @@ const deleteRelation = () => {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   padding: 1rem;
   box-shadow: 4px 4px 0px black;
   background-color: #fff;
@@ -131,7 +131,7 @@ const deleteRelation = () => {
 
 .relation-input,
 .relation-select {
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   border-radius: 4px;
   padding: 0.5rem;
   box-shadow: 3px 3px 0px black;
@@ -158,7 +158,7 @@ const deleteRelation = () => {
 .save-relation-btn {
   align-self: flex-end;
   padding: 0.5rem 1rem;
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   border-radius: 4px;
   font-weight: bold;
   background-color: #2fff2f;
@@ -177,7 +177,7 @@ const deleteRelation = () => {
 .delete-relation-btn {
   align-self: flex-end;
   padding: 0.5rem 1rem;
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   border-radius: 4px;
   font-weight: bold;
   background-color: #ff6b6b;

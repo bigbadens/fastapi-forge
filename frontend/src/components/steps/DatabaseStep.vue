@@ -66,10 +66,10 @@ onMounted(() => {
 
 .db-item {
   caret-color: transparent;
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   font-weight: bold;
   border-radius: 4px;
-  box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+  box-shadow: 3px 3px 0px var(--color-shadow);
   padding: 1rem;
   text-align: center;
   width: 100px;
@@ -77,27 +77,28 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f4f4f0;
+  background-color: var(--color-bg-default);
   transition: all 0.1s ease-in-out;
+  color: var(--color-text-default);
 }
 
 .db-item.enabled:hover {
   transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 0px var(--color-shadow);
   cursor: pointer;
   background-color: #2fff2f;
 }
 
 .db-item.enabled.confirmed {
   transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 0px var(--color-shadow);
   background-color: #2fff2f;
 }
 
 .db-item.enabled.confirmed:hover {
   background-color: #f4f4f0;
   transform: translate(0px, 0px);
-  box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+  box-shadow: 3px 3px 0px var(--color-shadow);
 }
 
 .db-item.disabled {

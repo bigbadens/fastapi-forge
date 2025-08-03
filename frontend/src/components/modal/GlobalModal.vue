@@ -45,10 +45,11 @@ function close() {
 }
 
 .modal {
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   border-radius: 6px;
   overflow: hidden;
-  background-color: white;
+  background-color: var(--color-bg-accent);
+  color: var(--color-text-accent);
   max-width: 350px;
   width: 100%;
   margin: 0 1rem;
@@ -60,8 +61,8 @@ function close() {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffdb58;
   padding: 0.75rem 1rem;
+  border-bottom: 2x solid var(--color-border);
 }
 
 .modal-title {
@@ -82,7 +83,6 @@ function close() {
 }
 
 .modal-body {
-  background-color: #ffdb58;
   overflow: hidden;
 }
 </style>

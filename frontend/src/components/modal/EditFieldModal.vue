@@ -88,7 +88,7 @@ const deleteField = () => {
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
-  background-color: #ffdb58;
+  background-color: var(--color-accent-bg);
 }
 
 .input-container {
@@ -112,7 +112,7 @@ const deleteField = () => {
 
 .field-input,
 .field-select {
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   border-radius: 6px;
   padding: 0.6rem;
   background-color: white;
@@ -135,7 +135,7 @@ const deleteField = () => {
 .delete-field-btn {
   width: 100%;
   padding: 0.5rem 1rem;
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   border-radius: 4px;
   background-color: #ff6b6b;
   box-shadow: 3px 3px 0px black;
@@ -151,7 +151,7 @@ const deleteField = () => {
 .save-field-btn {
   width: 100%;
   padding: 0.5rem 1rem;
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   border-radius: 4px;
   background-color: #2fff2f;
   box-shadow: 3px 3px 0px black;

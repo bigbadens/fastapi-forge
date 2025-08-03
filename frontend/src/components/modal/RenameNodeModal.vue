@@ -40,7 +40,7 @@ const rename = () => {
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   box-shadow: 4px 4px 0 black;
   background-color: #fff;
   width: 100%;
@@ -58,7 +58,7 @@ const rename = () => {
 }
 
 .field-input {
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   border-radius: 4px;
   padding: 0.5rem;
   background-color: #f4f4f0;
@@ -77,7 +77,7 @@ const rename = () => {
 .save-btn {
   align-self: flex-end;
   padding: 0.5rem 1rem;
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   border-radius: 4px;
   font-weight: bold;
   background-color: #2fff2f;
